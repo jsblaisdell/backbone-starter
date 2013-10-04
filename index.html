@@ -1,6 +1,7 @@
 <html>
 <head>
   <title>Super Special Awesome Stock Ticker</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -10,7 +11,7 @@
 <!-- Underscore Template -->
 <div id="templates">
     <script class="stock" type="text/underscore">
-        <p>The current {{ name }} price is ${{ price }}.</p>
+        <p>The current {{ name }} price is <span class="price">${{ price }}</span>.</p>
     </script>
 </div>
 

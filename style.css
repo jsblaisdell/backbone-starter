@@ -1,0 +1,15 @@
+body {
+    font-family: helvetica;
+}
+
+.price {
+    font-weight: bold;
+}
+
+.good-change {
+    color: green;
+}
+
+.bad-change {
+    color: red;
+}
