@@ -7,7 +7,8 @@ _.templateSettings = {
 
 // Add our own utility functions to underscore
 _.mixin({
-  uselessMath: function (x, y, z) {
-    return x + y * z;
+  getTemplate: function (name) {
+    var templateHtml = $('#templates .' + name).html();
+    return _.template(templateHtml);
   }
 });

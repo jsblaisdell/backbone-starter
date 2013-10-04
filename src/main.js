@@ -23,11 +23,10 @@
 
     _.each(data.query.results.quote, function (quote) {
       var stock = _.find(stocks, function (s) { return s.get('name') == quote.symbol; });
-      var newPrice = parseFloat(quote.AskRealtime);
-      stock.updatePrice(newPrice);
+      stock.updatePrice(quote.AskRealtime);
     });
     setTimeout(updateLoop, 3000);
-  }
+  };
 
   var updateLoop = function () {
     $.ajax({
