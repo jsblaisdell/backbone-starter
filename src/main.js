@@ -12,7 +12,6 @@
   // Create a view for each stock and render its element to the page
   _.each(stocks, function (stock) {
     var view = new StockView({ model: stock });
-    view.render();
     $('.stocks').append(view.el);
   });
 
@@ -23,8 +22,9 @@
   window.updateStocks = function (data) {
 
     _.each(data.query.results.quote, function (quote) {
-      var stock = _.find(stocks, function (s) { return s.get('name') == quote.symbol });
-      stock.updatePrice(quote.AskRealtime);
+      var stock = _.find(stocks, function (s) { return s.get('name') == quote.symbol; });
+      var newPrice = parseFloat(quote.AskRealtime);
+      stock.updatePrice(newPrice);
     });
     setTimeout(updateLoop, 3000);
   }
